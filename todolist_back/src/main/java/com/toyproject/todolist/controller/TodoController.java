@@ -44,6 +44,7 @@ public class TodoController {
 
     @PutMapping("/todo/{todoId}") // 수정
     public ResponseEntity<?> updateApi(@RequestBody ReqUpdateTodoListDto reqDto) {
+        log.info("{}", reqDto);
         return ResponseEntity.ok().body(todolistService.updateTodo(reqDto));
     }
 
