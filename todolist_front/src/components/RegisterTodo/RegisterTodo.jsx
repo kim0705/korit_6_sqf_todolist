@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { addTodo } from '../../apis/todoApi';
+/** @jsxImportSource @emotion/react */
+import * as s from './style';
 
 function RegisterTodo({ setParams, requestTodoList}) {
 
@@ -56,11 +58,11 @@ function RegisterTodo({ setParams, requestTodoList}) {
     }
     return (
 
-        <div class="register-box">
-            <input type="text" className='submit-box' name='content' value={registerTodo.content}
+        <div css={s.registerBox}>
+            <input css={s.registerInput} type="text" name='content' value={registerTodo.content}
                 onChange={handleRegisterInputChange} onKeyDown={handleEnter}
                 placeholder="To Do - List를 입력해주세요." />
-            <input type='month' name='registerDate' className='register-input' onChange={handleInputChange} />
+            <input css={s.registerDate} type='month' name='registerDate' onChange={handleInputChange} />
         </div>
 
     );

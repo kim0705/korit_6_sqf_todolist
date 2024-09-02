@@ -1,10 +1,12 @@
 import React from 'react';
 import TodoItem from '../TodoItem/TodoItem';
+/** @jsxImportSource @emotion/react */
+import * as s from './style';
 
 function CompleteTodoList({ todoList, setTodoList, requestTodoList }) {
     return (
-        <div className="list">
-            <div className="sc-box">
+        <div css={s.list}>
+            <div css={s.scBox}>
                 <h2>완료 List</h2>
             </div>
             <table>

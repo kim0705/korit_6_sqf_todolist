@@ -1,6 +1,8 @@
 import React from 'react';
 import axios from 'axios';
 import UpdateTodoButton from '../UpdateTodoButton/UpdateTodoButton';
+/** @jsxImportSource @emotion/react */
+import * as s from './style';
 
 function TodoUpdateItem({ key, todo, todoList, setTodoList, handleUpdateTodoClick }) {
     
@@ -22,13 +24,13 @@ function TodoUpdateItem({ key, todo, todoList, setTodoList, handleUpdateTodoClic
     return (
         <tr key={key}>
             <input
-                className='todo-check'
+                css={s.todoCheck}
                 type="checkbox"
                 checked={todo.checkStatus}
                 onChange={() => handleCheckedChange(todo.todoId)}
             />
-            <td className='content'>{todo.content}</td>
-            <td className='date'>{todo.registerDate}</td>
+            <td css={s.todoContent}>{todo.content}</td>
+            <td css={s.todoDate}>{todo.registerDate}</td>
             <td>
                 <UpdateTodoButton
                     todoId={todo.todoId}

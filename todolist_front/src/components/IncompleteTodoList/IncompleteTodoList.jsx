@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import TodoUpdateItem from '../TodoUpdateIem/TodoUpdateItem';
 import { getTodoById } from '../../apis/todoApi';
+/** @jsxImportSource @emotion/react */
+import * as s from './style';
 
 function IncompleteTodoList({ setModalOpen, todoList, setTodoList, setUpdateTodo }) {
 
@@ -17,8 +19,8 @@ function IncompleteTodoList({ setModalOpen, todoList, setTodoList, setUpdateTodo
     }
 
     return (
-        <div className="list">
-            <div className="sc-box">
+        <div css={s.list}>
+            <div css={s.scBox}>
                 <h2>미완료 List</h2>
             </div>
             <table>

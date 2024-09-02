@@ -2,6 +2,8 @@ import React from 'react';
 import { TfiPencilAlt } from "react-icons/tfi";
 import DeleteTodoButton from '../DeleteTodoButton/DeleteTodoButton';
 import axios from 'axios';
+/** @jsxImportSource @emotion/react */
+import * as s from './style';
 
 function TodoItem({ key, todo, todoList, setTodoList, requestTodoList }) {
 
@@ -23,13 +25,13 @@ function TodoItem({ key, todo, todoList, setTodoList, requestTodoList }) {
     return (
         <tr key={key}>
             <input
-                className='todo-check'
+                css={s.todoCheck}
                 type="checkbox"
                 checked={todo.checkStatus}
                 onChange={() => handleCheckedChange(todo.todoId)}
             />
-            <td className='content'>{todo.content}</td>
-            <td className='date'>{todo.registerDate}</td>
+            <td css={s.todoContent}>{todo.content}</td>
+            <td css={s.todoDate}>{todo.registerDate}</td>
             <td>
                 <DeleteTodoButton
                     todoId={todo.todoId}

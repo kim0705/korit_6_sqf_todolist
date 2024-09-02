@@ -2,13 +2,14 @@ import RegisterTodo from '../../components/RegisterTodo/RegisterTodo';
 import TodoList from '../../components/TodoList/TodoList';
 import IncompleteTodoList from '../../components/IncompleteTodoList/IncompleteTodoList';
 import CompleteTodoList from '../../components/CompleteTodoList/CompleteTodoList';
+/** @jsxImportSource @emotion/react */
+import * as s from './style';
 
 function MainPage({setModalOpen, setParams, setUpdateTodo, todoList, setTodoList, requestTodoList}) {
-    
 
     return (
-        <div className="container">
-            <h1 className='listtitle'>todolist</h1>
+        <div css={s.container}>
+            <h1 css={s.listTitle}>todolist</h1>
 
             <RegisterTodo
                 setParams={setParams}
