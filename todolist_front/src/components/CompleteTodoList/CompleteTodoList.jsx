@@ -5,8 +5,8 @@ import * as s from './style';
 
 function CompleteTodoList({ todoList, setTodoList, requestTodoList }) {
     return (
-        <div css={s.list}>
-            <div css={s.scBox}>
+        <div css={s.listbox}>
+            <div css={s.titleBox}>
                 <h2>완료 List</h2>
             </div>
             <table>

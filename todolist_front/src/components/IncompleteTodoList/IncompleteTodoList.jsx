@@ -19,8 +19,8 @@ function IncompleteTodoList({ setModalOpen, todoList, setTodoList, setUpdateTodo
     }
 
     return (
-        <div css={s.list}>
-            <div css={s.scBox}>
+        <div css={s.listbox}>
+            <div css={s.titleBox}>
                 <h2>미완료 List</h2>
             </div>
             <table>

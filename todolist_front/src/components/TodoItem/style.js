@@ -6,7 +6,7 @@ export const todoCheck = css`
     cursor: pointer;
 
     /* 체크박스가 체크된 경우 입력 필드에 줄 그어지기 */
-    &:checked + .content {
+    &:checked + td {
         text-decoration: line-through; /* 체크된 경우 줄 그어지기 */
         color: gray; /* 체크된 항목 색상 변경 */
         background-color: #f0f0f0; 
@@ -25,14 +25,18 @@ export const todoContent = css`
     overflow-wrap: break-word;
     border: 1px solid #ddd;
     border-radius: 10px;
-    padding: 5px;
     font-family: 'GangwonEduSaeeum_OTFMediumA';
     font-size: 35px;
     color: #333333;
+    text-align: left; /* 텍스트 왼쪽 정렬 */
+    padding: 10px;
+    margin-bottom: 5px;
 `;
 
 export const todoDate = css`
-	text-align: center;
     font-family: 'GangwonEduSaeeum_OTFMediumA';
     font-size: 25px;
+    text-align: left; /* 텍스트 왼쪽 정렬 */
+    padding: 10px;
+    margin-bottom: 5px;
 `;

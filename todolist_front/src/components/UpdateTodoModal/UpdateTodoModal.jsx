@@ -55,15 +55,16 @@ function UpdateTodoModal({ isModalOpen, setModalOpen, setUpdateTodo, updateTodo,
                     top: "50%",
                     left: "50%",
                     padding: "20px",
-                    width: "570px",
-                    height: "750px",
+                    width: "550px",
+                    height: "600px",
                     border: "3px solid #6a8ab1",
                     borderRadius: "10px",
                     backgroundColor: "#fafafa",
                     display: "flex",
                     flexDirection: "column",
-                    justifyContent: "space-between",
-                    alignItems: "center",
+                    justifyContent: "center",
+                    alignContent: "space-between",
+                    overflow: "hidden" 
                 }
             }}
         >
@@ -72,11 +73,11 @@ function UpdateTodoModal({ isModalOpen, setModalOpen, setUpdateTodo, updateTodo,
                     style={{
                         padding: "6px",
                         borderBottom: "4px solid #D6E0F0",
+                        marginBottom: "0px",
                         color: "#a3c2e5",
                         fontFamily: 'GangwonEduSaeeum_OTFMediumA',
-                        fontSize: "60px",
-                        textShadow: "1px 1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000",
-                        alignItems: "center"
+                        fontSize: "50px",
+                        textShadow: "1px 1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000"
                     }}
                 >
                     todo 내용 수정
@@ -88,14 +89,16 @@ function UpdateTodoModal({ isModalOpen, setModalOpen, setUpdateTodo, updateTodo,
                         onChange={handleUpdateInputChange}
                         value={updateTodo.content}
                         style={{
+                            boxSizing: "border-box",
                             width: "450px",
-                            padding: "6px",
+                            padding: "6px 20px",
                             margin: "30px",
                             borderRadius: "10px",
                             border: "2px solid #6a8ab1",
                             color: "#a3c2e5",
                             fontFamily: 'GangwonEduSaeeum_OTFMediumA',
-                            fontSize: "50px"
+                            fontSize: "40px",
+                            cursor: "pointer"
                         }}
                     />
                     <input
@@ -104,14 +107,16 @@ function UpdateTodoModal({ isModalOpen, setModalOpen, setUpdateTodo, updateTodo,
                         onChange={handleUpdateInputChange}
                         value={updateTodo.registerDate}
                         style={{
+                            boxSizing: "border-box",
                             width: "450px",
-                            padding: "6px",
+                            padding: "6px 20px",
                             margin: "30px",
                             borderRadius: "10px",
                             border: "2px solid #6a8ab1",
                             color: "#a3c2e5",
                             fontFamily: 'GangwonEduSaeeum_OTFMediumA',
-                            fontSize: "50px"
+                            fontSize: "40px",
+                            cursor: "pointer"
                         }}
                     />
                 </div>
@@ -119,14 +124,16 @@ function UpdateTodoModal({ isModalOpen, setModalOpen, setUpdateTodo, updateTodo,
                     <button
                         onClick={handleUpdateSubmitClick}
                         style={{
-                            width: "460px",
+                            boxSizing: "border-box",
+                            width: "450px",
                             padding: "6px",
                             margin: "30px",
                             borderRadius: "10px",
                             border: "2px solid #6a8ab1",
                             color: "#a3c2e5",
                             fontFamily: 'GangwonEduSaeeum_OTFMediumA',
-                            fontSize: "50px"
+                            fontSize: "40px",
+                            cursor: "pointer"
                         }}
                     >
                         확인
@@ -134,14 +141,15 @@ function UpdateTodoModal({ isModalOpen, setModalOpen, setUpdateTodo, updateTodo,
                     <button
                         onClick={closeModal}
                         style={{
-                            width: "460px",
+                            width: "450px",
                             padding: "6px",
                             margin: "30px",
                             borderRadius: "10px",
                             border: "2px solid #6a8ab1",
                             color: "#a3c2e5",
                             fontFamily: 'GangwonEduSaeeum_OTFMediumA',
-                            fontSize: "50px"
+                            fontSize: "40px",
+                            cursor: "pointer"
                         }}
                     >
                         취소

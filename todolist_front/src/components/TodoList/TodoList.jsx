@@ -5,8 +5,8 @@ import * as s from './style';
 
 function TodoList({ todoList, setTodoList, requestTodoList })  {
     return (
-        <div css={s.list}>
-            <div css={s.scBox}>
+        <div css={s.listbox}>
+            <div css={s.titleBox}>
                 <h2>전체 List</h2>
             </div>
             <table>

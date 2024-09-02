@@ -1,6 +1,8 @@
 import React from 'react';
 import { deleteTodo } from '../../apis/todoApi';
 import { VscTrash } from 'react-icons/vsc';
+/** @jsxImportSource @emotion/react */
+import * as s from './style';
 
 function DeleteTodoButton({ todoId, requestTodoList }) {
     const handleDeleteClick = async (todoId) => {
@@ -19,7 +21,7 @@ function DeleteTodoButton({ todoId, requestTodoList }) {
     };
 
     return (
-        <button onClick={() => handleDeleteClick(todoId)}>
+        <button css={s.deleteButton} onClick={() => handleDeleteClick(todoId)}>
             <VscTrash />
         </button>
     );

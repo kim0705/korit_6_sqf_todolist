@@ -15,7 +15,7 @@ function MainPage({setModalOpen, setParams, setUpdateTodo, todoList, setTodoList
                 setParams={setParams}
                 requestTodoList={requestTodoList}
             />
-            <div className="list-container">
+            <div css={s.listContainer}>
 
                 <TodoList
                     todoList={todoList}

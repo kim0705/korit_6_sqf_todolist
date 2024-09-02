@@ -3,6 +3,7 @@ import { css } from "@emotion/react";
 export const registerBox = css`
 	position: relative;
     display: flex;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
@@ -27,13 +28,15 @@ export const registerInput = css`
 `;
 
 export const registerDate = css`
-    width: 120px;
-    height: 50%;
+    box-sizing: border-box;
+    width: 250px;
+    height: 80%;
     margin: 20px 40px;
-    padding: 10px;
+    padding: 10px 20px;
     border: 2px solid #D6E0F0;
     border-radius: 8px;
     text-align: center;
     font-family: 'GangwonEduSaeeum_OTFMediumA';
-    font-size: 21px;
+    font-size: 35px;
+    cursor: pointer;
 `;
