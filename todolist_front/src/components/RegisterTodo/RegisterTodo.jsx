@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react';
-import { addTodo } from '../../apis/todoApi';
 /** @jsxImportSource @emotion/react */
 import * as s from './style';
+import React, { useEffect, useState } from 'react';
+import { addTodo } from '../../apis/todoApi';
 
-function RegisterTodo({ setParams, requestTodoList}) {
+function RegisterTodo({ setParams, requestTodoList }) {
 
     const [registerTodo, setRegisterTodo] = useState({
         content: "",
@@ -33,21 +33,21 @@ function RegisterTodo({ setParams, requestTodoList}) {
     const handleRegisterSubmitClick = async () => {
         try {
             const response = await addTodo(registerTodo);
-            
+
             if (response.status === 200) {
                 alert("등록");
             }
-            
+
         } catch (e) {
             console.error(e);
             alert("등록실패");
         }
-        
-        
+
+
         setRegisterTodo({
             content: ""
         });
-        
+
         await requestTodoList();
     }
 

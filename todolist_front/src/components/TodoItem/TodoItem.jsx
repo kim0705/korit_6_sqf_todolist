@@ -11,7 +11,7 @@ function TodoItem({ key, todo, todoList, setTodoList, requestTodoList }) {
         const todo = todoList.find(todo => todo.todoId === todoId);
         const updatedTodo = {
             ...todo,
-            checkStatus: todo.checkStatus === 1 ? 0 : 1  // checkStatus를 1로 변a경
+            checkStatus: todo.checkStatus === 1 ? 0 : 1  // checkStatus를 1로 변경
         };
 
         try {

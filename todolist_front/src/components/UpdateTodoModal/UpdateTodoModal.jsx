@@ -1,47 +1,29 @@
-import axios from 'axios';
 import ReactModal from 'react-modal';
+import { updateTodoApi } from '../../apis/todoApi';
 
 function UpdateTodoModal({ isModalOpen, setModalOpen, setUpdateTodo, updateTodo, requestTodoList }) {
 
     const closeModal = () => {
         setModalOpen(false);
-        setUpdateTodo({
-            todoId: "",
-            checkStatus: "",
-            content: "",
-            registerDate: "",
-        })
     }
 
     const handleUpdateInputChange = (e) => {
-        setUpdateTodo(ut => {
-            return {
-                ...ut,
-                [e.target.name]: e.target.value
-            };
-        });
-    }
+        setUpdateTodo(ut => ({
+            ...ut,
+            [e.target.name]: e.target.value
+        }));
+    };
 
     const handleUpdateSubmitClick = async () => {
         await requestUpdateTodo();
         closeModal();
         requestTodoList();
     }
-    
+
     const requestUpdateTodo = async () => {
-        // const response = await updateTodo(updateTodo.todoId, updateTodo);
-        // console.log(updateTodo);
-        // return response.data;
-
-        let responseData = null;
-
-        try {
-            const response = await axios.put(`http://localhost:8080/api/v1/todo/${updateTodo.todoId}`, updateTodo)
-            responseData = response.data;
-        } catch (e) {
-            console.error(e);
-        }
-        return responseData;
+        await updateTodoApi(updateTodo.todoId, updateTodo);
+        console.log(updateTodo);
+        requestTodoList();
     }
 
     return (
@@ -64,7 +46,7 @@ function UpdateTodoModal({ isModalOpen, setModalOpen, setUpdateTodo, updateTodo,
                     flexDirection: "column",
                     justifyContent: "center",
                     alignContent: "space-between",
-                    overflow: "hidden" 
+                    overflow: "hidden"
                 }
             }}
         >
@@ -87,7 +69,6 @@ function UpdateTodoModal({ isModalOpen, setModalOpen, setUpdateTodo, updateTodo,
                         type="text"
                         name="content"
                         onChange={handleUpdateInputChange}
-                        value={updateTodo.content}
                         style={{
                             boxSizing: "border-box",
                             width: "450px",
@@ -105,7 +86,6 @@ function UpdateTodoModal({ isModalOpen, setModalOpen, setUpdateTodo, updateTodo,
                         type="date"
                         name="registerDate"
                         onChange={handleUpdateInputChange}
-                        value={updateTodo.registerDate}
                         style={{
                             boxSizing: "border-box",
                             width: "450px",

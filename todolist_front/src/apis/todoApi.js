@@ -44,7 +44,7 @@ export const deleteTodo = async (todoId) => {
     return response;
 };
 
-export const updateTodo = async (todoId, updateTodo) => {
+export const updateTodoApi = async (todoId, updateTodo) => {
     let response = null;
     try {
         response = await instance.put(`/todo/${todoId}`, updateTodo);

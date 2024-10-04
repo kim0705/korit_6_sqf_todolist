@@ -12,15 +12,6 @@ import java.util.stream.Collectors;
 @Service
 public class TodolistServiceImpl implements TodolistService {
 
-//    public User registerUser(ReqRegisterUserDto userDto) {
-//        User user = User.builder()
-//                .userName(userDto.getUserName())
-//                .password(userDto.getPassword())
-//                .build();
-//
-//        return user;
-//    }
-
     @Autowired
     private TodoMapper todoMapper;
 

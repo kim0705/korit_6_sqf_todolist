@@ -11,7 +11,7 @@ import { etTodoList, getTodoList } from './apis/todoApi';
 import MainPage from './pages/MainPage/MainPage';
 
 function App() {
-    const [isModalOpen, setModalOpen] = useState(false);
+    const [isModalOpen, setModalOpen] = useState(false); // modal 전역으로
 
     const [params, setParams] = useState({
         registerDate: "",
