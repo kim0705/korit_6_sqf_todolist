@@ -3,6 +3,7 @@ import axios from 'axios';
 import UpdateTodoButton from '../UpdateTodoButton/UpdateTodoButton';
 /** @jsxImportSource @emotion/react */
 import * as s from './style';
+import { updateTodoApi } from '../../apis/todoApi';
 
 function TodoUpdateItem({ key, todo, todoList, setTodoList, handleUpdateTodoClick }) {
     
@@ -14,7 +15,7 @@ function TodoUpdateItem({ key, todo, todoList, setTodoList, handleUpdateTodoClic
         };
 
         try {
-            await axios.put(`http://localhost:8080/api/v1/todo/${todoId}`, updatedTodo);
+            await updateTodoApi(todoId, updatedTodo);
             setTodoList(todoList.map(t => t.todoId === todoId ? updatedTodo : t));
         } catch (e) {
             console.error(e);

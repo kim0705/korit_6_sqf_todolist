@@ -4,6 +4,7 @@ import DeleteTodoButton from '../DeleteTodoButton/DeleteTodoButton';
 import axios from 'axios';
 /** @jsxImportSource @emotion/react */
 import * as s from './style';
+import { updateTodoApi } from '../../apis/todoApi';
 
 function TodoItem({ key, todo, todoList, setTodoList, requestTodoList }) {
 
@@ -15,7 +16,7 @@ function TodoItem({ key, todo, todoList, setTodoList, requestTodoList }) {
         };
 
         try {
-            await axios.put(`http://localhost:8080/api/v1/todo/${todoId}`, updatedTodo);
+            await updateTodoApi(todoId, updatedTodo);
             setTodoList(todoList.map(t => t.todoId === todoId ? updatedTodo : t));
         } catch (e) {
             console.error(e);

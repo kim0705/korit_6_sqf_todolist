@@ -31,7 +31,7 @@ function App() {
 
     const requestTodoList = async () => {
         const response = await getTodoList(params);
-        setTodoList(response.data);
+        setTodoList(response?.data);
         console.log(response.data);
     }
 
