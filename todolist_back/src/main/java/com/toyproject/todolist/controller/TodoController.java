@@ -18,8 +18,9 @@ public class TodoController {
     private TodolistService todolistService;
 
     @PostMapping("/todo") // 생성
-    public ResponseEntity<?> registerApi(@RequestBody ReqRegisterInputDto reqDto) {
-        return ResponseEntity.ok().body(todolistService.registerTodo(reqDto));
+    public ResponseEntity<?> registerApi(@RequestBody ReqRegisterInputDto dto) {
+        todolistService.registerTodo(dto);
+        return ResponseEntity.ok().body(true);
     }
 
     @GetMapping("/todolist") // 날짜별 조회
@@ -34,14 +35,16 @@ public class TodoController {
     }
 
     @PutMapping("/todo/{todoId}") // 수정
-    public ResponseEntity<?> updateApi(@RequestBody ReqUpdateTodoListDto reqDto) {
-        log.info("{}", reqDto);
-        return ResponseEntity.ok().body(todolistService.updateTodo(reqDto));
+    public ResponseEntity<?> updateApi(@RequestBody ReqUpdateTodoListDto dto) {
+        log.info("{}", dto);
+        todolistService.updateTodo(dto);
+        return ResponseEntity.ok().body(true);
     }
 
     @DeleteMapping("/todo/{todoId}") // 삭제
     public ResponseEntity<?> deleteApi(@PathVariable int todoId) {
-        return ResponseEntity.ok().body(todolistService.deleteTodo(todoId));
+        todolistService.deleteTodo(todoId);
+        return ResponseEntity.ok().body(true);
     }
 
 
